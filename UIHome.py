@@ -34,9 +34,6 @@ class UIWindow(QWidget):
     def __init__(self, parent=None):
         super(UIWindow, self).__init__(parent)
 
-        ## Create Navitation Bar
-        ##utils.initNavigationBar("Home", self)
-
         ## Create Top/Bottom/Horizontal Image Label
         self.topImg = QLabel(self)
         self.topImg.setGeometry(QtCore.QRect(0, 0, 1366, 120))
