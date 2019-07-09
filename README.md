@@ -36,6 +36,3 @@ Cài đặt GIT cho Window (https://git-scm.com/downloads)
 Vào Setting/Version Control/Git --> Chọn đường dẫn gới C:\Program Files\Git\bin
 Thiết lập Customize Menu hiển thị Tab: Version Control Systems
 Chọn Check Out From Version Control để clone Responsive về máy tính
-
-
-
