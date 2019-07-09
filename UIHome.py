@@ -7,6 +7,7 @@ import logging
 import datetime
 import threading
 import numpy as np
+from playsound import playsound
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QLabel, QFontDialog, QFrame
@@ -309,6 +310,7 @@ def main():
     #c.daemon = True
     d.start()
     c.start()
+    playsound('sounds/camon.wav')
     time.sleep(0.1)
     sys.exit(app.exec_())
 
