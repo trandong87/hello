@@ -1,0 +1,60 @@
+INFO:root:Thread Hi: starting
+INFO:root:App start at: 2019-07-07 19:37:53.740884
+INFO:root:App start at: 2019-07-07 19:38:18.418704
+INFO:root:App start at: 2019-07-07 19:38:34.998069
+INFO:root:App start at: 2019-07-07 19:41:35.792630
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-07 19:41:51.773406
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-07 19:53:05.522626
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-07 19:53:05.690177
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-07 19:53:05.861720
+INFO:root:App start at: 2019-07-07 20:38:10.485287
+INFO:root:App start at: 2019-07-07 20:38:41.999076
+INFO:root:App start at: 2019-07-07 20:40:00.840782
+INFO:root:App start at: 2019-07-07 20:42:09.177404
+INFO:root:App start at: 2019-07-07 20:42:32.787943
+INFO:root:App start at: 2019-07-07 20:46:32.069485
+INFO:root:App start at: 2019-07-07 20:49:17.804939
+INFO:root:App start at: 2019-07-07 20:50:30.818827
+INFO:root:App start at: 2019-07-07 20:51:13.940680
+INFO:root:App start at: 2019-07-07 20:54:33.436649
+INFO:root:App start at: 2019-07-07 20:55:18.908833
+INFO:root:App start at: 2019-07-07 20:55:41.710100
+INFO:root:App start at: 2019-07-07 20:57:32.212983
+INFO:root:App start at: 2019-07-07 20:58:43.815060
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-07 21:39:54.353248
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-07 21:39:54.859892
+INFO:root:App start at: 2019-07-07 22:21:08.238923
+INFO:root:App start at: 2019-07-07 22:21:23.213233
+INFO:root:App start at: 2019-07-07 22:24:34.780635
+INFO:root:App start at: 2019-07-07 22:25:33.893687
+INFO:root:App start at: 2019-07-07 22:25:50.598401
+INFO:root:App start at: 2019-07-07 22:26:04.114890
+INFO:root:App start at: 2019-07-07 22:26:16.397222
+INFO:root:App start at: 2019-07-07 22:26:41.067628
+INFO:root:App start at: 2019-07-07 22:27:05.449830
+INFO:root:App start at: 2019-07-07 22:27:33.450044
+INFO:root:App start at: 2019-07-07 22:29:15.295752
+INFO:root:App start at: 2019-07-07 22:30:12.932338
+INFO:root:App start at: 2019-07-07 22:30:23.884078
+INFO:root:App start at: 2019-07-07 22:30:31.085359
+INFO:root:App start at: 2019-07-07 22:30:46.779832
+INFO:root:App start at: 2019-07-07 22:31:17.462346
+INFO:root:App start at: 2019-07-07 22:31:27.827891
+INFO:root:App start at: 2019-07-07 22:31:48.068814
+INFO:root:App start at: 2019-07-07 22:37:01.091484
+INFO:root:App start at: 2019-07-07 22:38:22.109825
+INFO:root:App start at: 2019-07-07 22:39:24.047618
+INFO:root:App start at: 2019-07-07 22:39:59.373701
+INFO:root:App start at: 2019-07-07 22:40:22.213913
+INFO:root:App start at: 2019-07-07 22:42:21.309593
+INFO:root:App start at: 2019-07-07 22:42:41.464626
+INFO:root:App start at: 2019-07-07 22:43:24.165349
+INFO:root:App start at: 2019-07-07 22:44:06.849077
+INFO:root:App start at: 2019-07-07 23:38:49.443653
+INFO:root:App start at: 2019-07-08 08:09:16.187608
+INFO:root:App start at: 2019-07-08 08:11:27.449023
+INFO:root:App start at: 2019-07-08 08:13:21.824770
+INFO:root:App start at: 2019-07-08 08:57:01.049153
+INFO:root:App start at: 2019-07-08 08:57:18.487081
+INFO:root:App start at: 2019-07-08 09:12:14.570184
+INFO:root:App start at: 2019-07-08 09:12:36.001350
