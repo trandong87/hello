@@ -213,14 +213,15 @@ class MainWindow(QMainWindow):
         global qImg, scrollLen, scrollpointLeft
         self.Window.videoZone.setPixmap(QPixmap.fromImage(qImg))
         self.Window.timerUI.setText(time.strftime("%H:%M"))
-        """
+
         ## Scroll Text String
         if(scrollpointLeft<-scrollLen*40):
-            self.Window.scrollText.setGeometry(QtCore.QRect(0, 990, scrollLen*40, 120))
+            self.Window.scrollText.setGeometry(QtCore.QRect(1920, 990, scrollLen*40, 120))
+            scrollpointLeft = 1920
         else:
             scrollpointLeft = scrollpointLeft - 10
             self.Window.scrollText.setGeometry(QtCore.QRect(scrollpointLeft, 990, scrollLen*40, 120))
-        """
+
         qImg=0
 
 ## Level 1 function
