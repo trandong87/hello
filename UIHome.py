@@ -14,8 +14,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QLa
 logging.basicConfig(filename = 'app.log', level = logging.INFO)
 
 ## Creat instance for MQTT connection
-#broker_url = "10.20.44.169"
-broker_url = "69.51.177.91"
+broker_url = "10.20.44.169"
+#broker_url = "69.51.177.91"
 broker_port = 1883
 
 ## Variable store string got from Server to Display
@@ -176,7 +176,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Py.QMS Display 3.0")
         self.setCentralWidget(self.Window)
         #self.Window.introduce.clicked.connect(self.on_click)
-        self.show()
+        self.showFullScreen()
 
     def showIntroduction(self):
         self.intro = UIIntroduction.UIIntroduction(self)
