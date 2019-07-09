@@ -1,7 +1,6 @@
 import cv2
 import sys, utils
 import paho.mqtt.client as mqtt
-import UIIntroduction, UIMapsDirection, UIAppointmentConfirmation, UISupporting, UIServices
 import time
 import logging
 import datetime
@@ -11,13 +10,9 @@ from playsound import playsound
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QLabel, QFontDialog, QFrame
-# initialize the log settings
-logging.basicConfig(filename = 'app.log', level = logging.INFO)
 
-## Creat instance for MQTT connection
-broker_url = "10.20.44.169"
-#broker_url = "69.51.177.91"
-broker_port = 1883
+## initialize the log settings
+logging.basicConfig(filename = 'app.log', level = logging.INFO)
 
 ## Variable store string got from Server to Display
 w=0
@@ -56,7 +51,7 @@ class UIWindow(QWidget):
         self.scrollText = QLabel(self)
         self.scrollText.setFont(utils.font_48)
         self.scrollText.setAlignment(QtCore.Qt.AlignLeft)
-        self.scrollText.setText("Bệnh Viện Đa Khoa Hoàn Mỹ Kính Chào Quý Khách. Kính Chúc Quý Khách An Khang Thịnh Vượn.")
+        self.scrollText.setText(utils.scrollText)
         scrollLen = len(self.scrollText.text())
         self.scrollText.setGeometry(QtCore.QRect(0, 990, scrollLen*40, 120))
         self.scrollText.setStyleSheet('QLabel { background-color: transparent; color : white; center no-repeat; font-weight: bold;}')
@@ -176,12 +171,6 @@ class MainWindow(QMainWindow):
         #self.Window.introduce.clicked.connect(self.on_click)
         self.showFullScreen()
 
-    def showIntroduction(self):
-        self.intro = UIIntroduction.UIIntroduction(self)
-        self.setCentralWidget(self.intro)
-        self.intro.back.clicked.connect(self.startUIWindow)
-        self.show()
-
     def on_click(self):
         print('Click')
 
@@ -214,6 +203,10 @@ class MainWindow(QMainWindow):
         global qImg, scrollLen, scrollpointLeft
         self.Window.videoZone.setPixmap(QPixmap.fromImage(qImg))
         self.Window.timerUI.setText(time.strftime("%H:%M"))
+        playsound('sounds/#0.mp3')
+        playsound('sounds/#1.mp3')
+        playsound('sounds/#2.mp3')
+        playsound('sounds/#3.mp3')
         playsound('sounds/camon.mp3')
         ## Scroll Text String
         if(scrollpointLeft<-scrollLen*40):
@@ -250,7 +243,7 @@ def myMqttInit():
     client.on_connect = on_connect
     #To Process Every Other Message
     client.on_message = on_message
-    client.connect(broker_url, broker_port)
+    client.connect(utils.broker_url, utils.broker_port)
     client.loop_start()
     client.subscribe("QMS/Display", qos=1)
     while True:
