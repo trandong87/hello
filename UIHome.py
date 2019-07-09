@@ -214,7 +214,7 @@ class MainWindow(QMainWindow):
         global qImg, scrollLen, scrollpointLeft
         self.Window.videoZone.setPixmap(QPixmap.fromImage(qImg))
         self.Window.timerUI.setText(time.strftime("%H:%M"))
-
+        playsound('sounds/camon.mp3')
         ## Scroll Text String
         if(scrollpointLeft<-scrollLen*40):
             self.Window.scrollText.setGeometry(QtCore.QRect(1920, 990, scrollLen*40, 120))
@@ -310,7 +310,7 @@ def main():
     #c.daemon = True
     d.start()
     c.start()
-    playsound('sounds/camon.wav')
+
     time.sleep(0.1)
     sys.exit(app.exec_())
 
