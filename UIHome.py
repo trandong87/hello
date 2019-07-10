@@ -216,6 +216,10 @@ class MainWindow(QMainWindow):
 
 ## TOP level function ---------------------------------------------------------------------------------------------
 ## ----------------------------------------------------------------------------------------------------------------
+def changeColor(Gate):
+    w.setQlbelPreviousColor()
+    w.setQlbelColor(Gate)
+
 def soundProcess(sNumber, sGate):
     if(sNumber.isnumeric() and sGate.isnumeric()):
         playsound("sounds/moi.mp3")
@@ -290,34 +294,48 @@ def dataProcess(dataInput):
     previousGate = Gate
     a = dataInput.find("$D")
     if(a>=0):
-        Gate = int(dataInput[a+4:a+4+2])
-        Number = dataInput[a+6:a+6+4]
-        w.setQlbelText(Gate, Number)
-        changeColor(Gate)
+        ## Append number and gate to qmsNumberList
+        if((dataInput[a+4:a+4+6]).isnumeric()):
+            utils.qmsNumberList.append(dataInput[a+4:a+4+6])
 
-def changeColor(Gate):
-    w.setQlbelPreviousColor()
-    w.setQlbelColor(Gate)
-
-## Define function put data number and gate to list
+## Define function put data number and gate to list - Kiểm tra form dữ liệu trong Readme khi sửa hàm này
 def qmsList():
-    if(len(utils.qmsNumberList)>0):
-        Gate = utils.qmsNumberList[0][a+4:a+4+2])
-        Number = dataInput[a+6:a+6+4]
+    global Gate, Number
+    while True:
+        if(len(utils.qmsNumberList)>0):
+            Gate = int(utils.qmsNumberList[0][0:2])
+            Number = utils.qmsNumberList[0][2:6]
+            utils.qmsNumberList.pop(0)
+            ## Display number and gate to UI
+            w.setQlbelText(Gate, Number)
+            w.setQlbelPreviousColor()
+            w.setQlbelColor(Gate)
+            ## Play Sound
+            soundProcess(str(Number), str(Gate))
+        time.sleep(0.5) # wait
 
 ## Define main function
 def main():
     global  w
     app = QApplication(sys.argv)
     w = MainWindow()
-    d = threading.Thread(name='myMqttInit', target=myMqttInit)
-    d.setDaemon(True)
-    c = threading.Thread(name='autoRun', target=autoRun)
-    c.setDaemon(True)
-    d.start()
-    c.start()
 
+    th1 = threading.Thread(name='myMqttInit', target=myMqttInit)
+    th1.setDaemon(True)
+
+    th2 = threading.Thread(name='autoRun', target=autoRun)
+    th2.setDaemon(True)
+
+    th3 = threading.Thread(name='qmsList', target=qmsList)
+    th3.setDaemon(True)
+
+    th1.start()
     time.sleep(0.1)
+    th2.start()
+    time.sleep(0.1)
+    th3.start()
+    time.sleep(0.1)
+
     sys.exit(app.exec_())
 
 if __name__ == '__main__':

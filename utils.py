@@ -2,8 +2,8 @@ from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtWidgets import QPushButton
 
 ## Define MQTT variable     -----------------------------------------------------------------------
-#broker_url = "10.20.44.169"     #At School
-broker_url = "69.51.177.91"    #At Dom
+broker_url = "10.20.44.169"     #At School
+#broker_url = "69.51.177.91"    #At Dom
 broker_port = 1883
 
 ## Define Global Variable   -----------------------------------------------------------------------
