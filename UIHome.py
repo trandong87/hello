@@ -6,7 +6,7 @@ import logging
 import datetime
 import threading
 import numpy as np
-from playsound import playsound
+import pygame
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QLabel, QFontDialog, QFrame
@@ -222,13 +222,30 @@ def changeColor(Gate):
 
 def soundProcess(sNumber, sGate):
     if(sNumber.isnumeric() and sGate.isnumeric()):
-        playsound("sounds/moi.mp3")
-        playsound("sounds/#" + sNumber[0] + ".mp3")
-        playsound("sounds/#" + sNumber[1] + ".mp3")
-        playsound("sounds/#" + sNumber[2] + ".mp3")
-        playsound("sounds/#" + sNumber[3] + ".mp3")
-        playsound("sounds/Q" + str(int(sGate)) + ".mp3")
-        playsound('sounds/camon.mp3')
+        pygame.mixer.music.load("sounds/moi.mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy()==True:
+            continue
+        pygame.mixer.music.load("sounds/#" + sNumber[0] + ".mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy()==True:
+            continue
+        pygame.mixer.music.load("sounds/#" + sNumber[1] + ".mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy()==True:
+            continue
+        pygame.mixer.music.load("sounds/#" + sNumber[2] + ".mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy()==True:
+            continue
+        pygame.mixer.music.load("sounds/#" + sNumber[3] + ".mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy()==True:
+            continue
+        pygame.mixer.music.load("sounds/Q" + sGate + ".mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy()==True:
+            continue
 
 def on_connect(client, userdata, flags, rc):
     print("Connected With Result Code " (rc))
@@ -311,15 +328,15 @@ def qmsList():
             w.setQlbelPreviousColor()
             w.setQlbelColor(Gate)
             ## Play Sound
-
-            soundProcess(str(Number), str(Gate))
-        time.sleep(0.5) # wait
+            soundProcess(Number, str(Gate))
+        time.sleep(0.01) # wait
 
 ## Define main function
 def main():
     global  w
     app = QApplication(sys.argv)
     w = MainWindow()
+    pygame.mixer.init()     ## Init for Sound card
 
     th1 = threading.Thread(name='myMqttInit', target=myMqttInit)
     th1.setDaemon(True)

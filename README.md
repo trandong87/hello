@@ -29,18 +29,22 @@ pip install paho-mqtt   \
 sudo apt-get install python3-pyqt5  \
 sudo apt-get install qt5-default    \
 \
-\
 II. Cấu hình Pycharm    \
 Vào Setting/Version Control/GitHub --> Đăng nhập tài khoản GIT  \
 Cài đặt GIT cho Window (https://git-scm.com/downloads)  \
 Vào Setting/Version Control/Git --> Chọn đường dẫn gới C:\Program Files\Git\bin \
 Thiết lập Customize Menu hiển thị Tab: Version Control Systems  \
 Chọn Check Out From Version Control để clone Responsive về máy tính \
-
+\
 III. Dữ liệu    \
 + From: $D01011234# \
         + $D: Dữ liệu gởi cho Display   \
         + 01: Tầng  \
         + 01: Zone  \
         + 1234: Số phiếu    \
-
+\
+IV. Load phần mềm từ GIT về Raspberry
++ Di chuyển vào thư mục muốn chưa chương trình  \
++ git clone https://github.com/tranthangdong/PyQmsDisplay.  \
++ Nhập account github để tải về \
+\
