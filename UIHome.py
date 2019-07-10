@@ -311,7 +311,6 @@ def qmsList():
             w.setQlbelPreviousColor()
             w.setQlbelColor(Gate)
             ## Play Sound
-
             soundProcess(str(Number), str(Gate))
         time.sleep(0.5) # wait
 
