@@ -168,11 +168,7 @@ class MainWindow(QMainWindow):
         self.Window = UIWindow(self)
         self.setWindowTitle("Py.QMS Display 3.0")
         self.setCentralWidget(self.Window)
-        #self.Window.introduce.clicked.connect(self.on_click)
         self.showFullScreen()
-
-    def on_click(self):
-        print('Click')
 
     def setQlbelText(self, Gate, Number):
         if(Gate==1):    self.Window.numberOne.setText(Number)
@@ -307,8 +303,7 @@ def autoRun():
 ## Xử lý dữ liệu nhận từ Server Broker
 def dataProcess(dataInput):
     ## String Sample: $D01011002#  Floor (Zone) 1, Gate 1, Number 1002
-    global  w, Gate, Number, previousGate
-    previousGate = Gate
+    global  w, Gate, Number
     a = dataInput.find("$D")
     if(a>=0):
         ## Append number and gate to qmsNumberList
@@ -317,19 +312,24 @@ def dataProcess(dataInput):
 
 ## Define function put data number and gate to list - Kiểm tra form dữ liệu trong Readme khi sửa hàm này
 def qmsList():
-    global Gate, Number
+    global Gate, Number, previousGate
     while True:
-        if(len(utils.qmsNumberList)>0):
-            Gate = int(utils.qmsNumberList[0][0:2])
-            Number = utils.qmsNumberList[0][2:6]
-            utils.qmsNumberList.pop(0)
-            ## Display number and gate to UI
-            w.setQlbelText(Gate, Number)
-            w.setQlbelPreviousColor()
-            w.setQlbelColor(Gate)
-            ## Play Sound
-            soundProcess(Number, str(Gate))
-        time.sleep(0.5) # wait
+        try:
+            if(len(utils.qmsNumberList)>0):
+                Gate = int(utils.qmsNumberList[0][0:2])
+                Number = utils.qmsNumberList[0][2:6]
+                utils.qmsNumberList.pop(0)
+                ## Display number and gate to UI
+                w.setQlbelText(Gate, Number)
+                w.setQlbelPreviousColor()
+                w.setQlbelColor(Gate)
+                previousGate = Gate
+                ## Play Sound
+                soundProcess(Number, str(Gate))
+            time.sleep(0.5) # wait
+        except IOError as e:
+            logging.info("Function [qmsList] has issue at: %s", str(datetime.datetime.now()))
+            logging.exception(str(e))
 
 ## Define main function
 def main():
