@@ -204,8 +204,6 @@ class MainWindow(QMainWindow):
         self.Window.videoZone.setPixmap(QPixmap.fromImage(qImg))
         self.Window.timerUI.setText(time.strftime("%H:%M"))
 
-        soundProcess("1234", "02")
-
         ## Scroll Text String
         if(scrollpointLeft<-scrollLen*40):
             self.Window.scrollText.setGeometry(QtCore.QRect(1920, 990, scrollLen*40, 120))
@@ -216,8 +214,8 @@ class MainWindow(QMainWindow):
 
         qImg=0
 
-
-## Level 1 function ---------------------------------------------------------------------------------------------
+## TOP level function ---------------------------------------------------------------------------------------------
+## ----------------------------------------------------------------------------------------------------------------
 def soundProcess(sNumber, sGate):
     if(sNumber.isnumeric() and sGate.isnumeric()):
         playsound("sounds/moi.mp3")
@@ -247,6 +245,7 @@ def on_message_from_server_to_keypad(client, userdata, message):
 def on_message(client, userdata, message):
     print("Message Recieved from Others: "+message.payload.decode())
 
+## Define function to receive the data string from Broker
 def myMqttInit():
     client = mqtt.Client()
     client.on_connect = on_connect
@@ -263,6 +262,7 @@ def myMqttInit():
             logging.info("Function [myMqttInit] has issue at: %s", str(datetime.datetime.now()))
             logging.exception(str(e))
 
+## Define function to get frame from video to show on UI
 def autoRun():
     global qImg, w, cap
     ret=1
@@ -298,6 +298,12 @@ def dataProcess(dataInput):
 def changeColor(Gate):
     w.setQlbelPreviousColor()
     w.setQlbelColor(Gate)
+
+## Define function put data number and gate to list
+def qmsList():
+    if(len(utils.qmsNumberList)>0):
+        Gate = utils.qmsNumberList[0][a+4:a+4+2])
+        Number = dataInput[a+6:a+6+4]
 
 ## Define main function
 def main():

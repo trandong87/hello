@@ -112,3 +112,12 @@ INFO:root:App start at: 2019-07-09 19:39:46.595482
 INFO:root:App start at: 2019-07-09 20:05:59.265739
 INFO:root:App start at: 2019-07-09 20:06:25.690198
 INFO:root:App start at: 2019-07-09 20:07:22.386485
+INFO:root:App start at: 2019-07-09 20:10:16.547077
+INFO:root:App start at: 2019-07-09 20:10:48.841716
+INFO:root:App start at: 2019-07-09 20:11:11.696666
+INFO:root:App start at: 2019-07-09 20:11:31.593850
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 20:11:37.462347
+INFO:root:App start at: 2019-07-09 20:11:46.771242
+INFO:root:App start at: 2019-07-09 20:12:50.211215
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 20:12:54.363809
+INFO:root:App start at: 2019-07-09 20:13:18.391378

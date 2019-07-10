@@ -8,6 +8,7 @@ broker_port = 1883
 
 ## Define Global Variable   -----------------------------------------------------------------------
 scrollText = "Bệnh Viện Đa Khoa Hoàn Mỹ Kính Chào Quý Khách. Kính Chúc Quý Khách An Khang Thịnh Vượn."
+qmsNumberList = []
 
 ## Define font size         -----------------------------------------------------------------------
 def setFontSize(x):
