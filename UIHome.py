@@ -329,7 +329,7 @@ def qmsList():
             w.setQlbelColor(Gate)
             ## Play Sound
             soundProcess(Number, str(Gate))
-        time.sleep(0.01) # wait
+        time.sleep(0.5) # wait
 
 ## Define main function
 def main():
