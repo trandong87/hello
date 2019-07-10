@@ -89,3 +89,26 @@ INFO:root:App start at: 2019-07-09 14:34:52.491989
 INFO:root:App start at: 2019-07-09 14:50:12.604216
 INFO:root:App start at: 2019-07-09 15:01:33.782332
 INFO:root:App start at: 2019-07-09 15:06:40.508040
+INFO:root:App start at: 2019-07-09 15:15:46.163171
+INFO:root:App start at: 2019-07-09 15:30:38.400170
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:30:47.949697
+INFO:root:App start at: 2019-07-09 15:31:21.817505
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:31:26.476762
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:31:36.561340
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:31:53.137432
+INFO:root:App start at: 2019-07-09 15:32:28.913838
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:32:35.883219
+INFO:root:App start at: 2019-07-09 15:34:03.608105
+INFO:root:App start at: 2019-07-09 15:34:26.799116
+INFO:root:App start at: 2019-07-09 15:38:56.777864
+INFO:root:App start at: 2019-07-09 15:39:15.032550
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:39:20.483921
+INFO:root:App start at: 2019-07-09 15:39:58.400405
+INFO:root:Function [on_message_from_server_to_display] has issue at: 2019-07-09 15:40:09.998686
+INFO:root:App start at: 2019-07-09 15:45:29.222600
+INFO:root:App start at: 2019-07-09 15:51:58.519848
+INFO:root:App start at: 2019-07-09 15:52:07.281233
+INFO:root:App start at: 2019-07-09 19:39:46.595482
+INFO:root:App start at: 2019-07-09 20:05:59.265739
+INFO:root:App start at: 2019-07-09 20:06:25.690198
+INFO:root:App start at: 2019-07-09 20:07:22.386485

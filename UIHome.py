@@ -203,11 +203,9 @@ class MainWindow(QMainWindow):
         global qImg, scrollLen, scrollpointLeft
         self.Window.videoZone.setPixmap(QPixmap.fromImage(qImg))
         self.Window.timerUI.setText(time.strftime("%H:%M"))
-        playsound('sounds/#0.mp3')
-        playsound('sounds/#1.mp3')
-        playsound('sounds/#2.mp3')
-        playsound('sounds/#3.mp3')
-        playsound('sounds/camon.mp3')
+
+        soundProcess("1234", "02")
+
         ## Scroll Text String
         if(scrollpointLeft<-scrollLen*40):
             self.Window.scrollText.setGeometry(QtCore.QRect(1920, 990, scrollLen*40, 120))
@@ -218,14 +216,25 @@ class MainWindow(QMainWindow):
 
         qImg=0
 
-## Level 1 function
+
+## Level 1 function ---------------------------------------------------------------------------------------------
+def soundProcess(sNumber, sGate):
+    if(sNumber.isnumeric() and sGate.isnumeric()):
+        playsound("sounds/moi.mp3")
+        playsound("sounds/#" + sNumber[0] + ".mp3")
+        playsound("sounds/#" + sNumber[1] + ".mp3")
+        playsound("sounds/#" + sNumber[2] + ".mp3")
+        playsound("sounds/#" + sNumber[3] + ".mp3")
+        playsound("sounds/Q" + str(int(sGate)) + ".mp3")
+        playsound('sounds/camon.mp3')
+
 def on_connect(client, userdata, flags, rc):
     print("Connected With Result Code " (rc))
 
 def on_message_from_server_to_display(client, userdata, message):
     try:
         global dataString
-        dataString = message.payload.decode()
+        dataString = message.payload.decode("utf-8")
         print("Message Recieved from Server: "+dataString)
         dataProcess(dataString)
         dataString=""
@@ -274,6 +283,7 @@ def autoRun():
             logging.info("Function [autoRun] has issue at: %s", str(datetime.datetime.now()))
             logging.exception(str(e))
 
+## Xử lý dữ liệu nhận từ Server Broker
 def dataProcess(dataInput):
     ## String Sample: $D01011002#  Floor (Zone) 1, Gate 1, Number 1002
     global  w, Gate, Number, previousGate
@@ -298,9 +308,6 @@ def main():
     d.setDaemon(True)
     c = threading.Thread(name='autoRun', target=autoRun)
     c.setDaemon(True)
-    ## Killing Python thread by setting it as daemon
-    #d.daemon = True
-    #c.daemon = True
     d.start()
     c.start()
 
