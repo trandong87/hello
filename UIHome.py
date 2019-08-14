@@ -25,7 +25,7 @@ previousGate=0
 qImg=0
 cap = cv2.VideoCapture("images/v1.divx")
 
-## This is Home of User interface of project
+## This is Home of User interface of projectr
 class UIWindow(QWidget):
     def __init__(self, parent=None):
         super(UIWindow, self).__init__(parent)
@@ -197,7 +197,9 @@ class MainWindow(QMainWindow):
 
     def showVideo(self):
         global qImg, scrollLen, scrollpointLeft
-        self.Window.videoZone.setPixmap(QPixmap.fromImage(qImg))
+        vImg = QtGui.QPixmap.fromImage(qImg)
+        ##self.Window.videoZone.setPixmap(QtGui.QPixmap.fromImage(qImg))
+        self.Window.videoZone.setPixmap(vImg)
         self.Window.timerUI.setText(time.strftime("%H:%M"))
 
         ## Scroll Text String

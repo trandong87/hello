@@ -25,6 +25,7 @@ pip install numpy   \
 sudo apt-get install libhdf5-dev libhdf5-serial-dev \
 sudo apt-get install libqtwebkit4 libqt4-test   \
 sudo pip install opencv-python​ \
+sudo apt-get install python-opencv
 pip install paho-mqtt   \
 sudo apt-get install python3-pyqt5  \
 sudo apt-get install qt5-default    \
